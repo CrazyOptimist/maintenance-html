@@ -2,7 +2,9 @@ version: "3.8"
 services:
   serve_static:
     container_name: maintanence_page
-    build: .
+    image: nginx:alpine
+    volumes:
+      - "./:/usr/share/nginx/html/"
     ports:
       - "8080:80"
     restart: always
